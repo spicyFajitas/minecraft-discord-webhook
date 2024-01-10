@@ -1,2 +1,2 @@
-JOIN="$PLAYER joined the game!"
-LEAVE="$PLAYER left the game... :("
+JOIN="$PLAYER joined the game :white_check_mark:"
+LEAVE="$PLAYER left the game :x:"
