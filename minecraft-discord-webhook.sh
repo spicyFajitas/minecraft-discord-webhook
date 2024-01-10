@@ -98,13 +98,13 @@ tail -n 0 -F $SERVERLOG/latest.log | while read LINE; do
 
     # advancements
     # comment/uncomment section to disable/enable
-    # *has\ made\ the\ advancement* | *completed\ the\ challenge* | *reached\ the\ goal*)
-    #     PLAYER=$(echo "$LINE" | grep -o ": .*" | awk '{print $2}')
-    #     MESSAGE=$(echo "$LINE" | grep -o ": .*" | cut -c 3-)
-    #     source $LANGFILE
-    #     echo "$PLAYER made an advancement! Sending webhook..."
-    #     webhook_compact "$MESSAGE" 2842864 "https://minotar.net/helm/$PLAYER?v=$CACHE"
-    #     ;;
+    *has\ made\ the\ advancement* | *completed\ the\ challenge* | *reached\ the\ goal*)
+        PLAYER=$(echo "$LINE" | grep -o ": .*" | awk '{print $2}')
+        MESSAGE=$(echo "$LINE" | grep -o ": .*" | cut -c 3-)
+        source $LANGFILE
+        echo "$PLAYER made an advancement! Sending webhook..."
+        webhook_compact "$MESSAGE" 2842864 "https://minotar.net/helm/$PLAYER?v=$CACHE"
+        ;;
 
     esac
 done
